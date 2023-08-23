@@ -1,5 +1,6 @@
 #ifndef MONTY_H
 #define MONTY_H
+#define  _POSIX_C_SOURCE 200809L
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
@@ -54,8 +55,8 @@ typedef struct instruction_s
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t getstdin(char **lineptr, int passed_file);
 char  *clean_line(char *passed_content);
-void f_push(stack_t **head, unsigned int number);
-void f_pall(stack_t **head, unsigned int number);
+void func_push_elem(stack_t **top_elem, unsigned int iterator);
+void func_pall(stack_t **top_elem, unsigned int iterator);
 void f_pint(stack_t **head, unsigned int number);
 int execute(char *passed_content, stack_t **top_elem, unsigned int iterator, FILE *passed_file);
 void evac_stack(stack_t *top_elem);
@@ -71,8 +72,8 @@ void f_pchar(stack_t **head, unsigned int counter);
 void f_pstr(stack_t **head, unsigned int counter);
 void f_rotl(stack_t **head, unsigned int counter);
 void f_rotr(stack_t **head, __attribute__((unused)) unsigned int counter);
-void addnode(stack_t **head, int n);
-void addqueue(stack_t **head, int n);
-void f_queue(stack_t **head, unsigned int counter);
-void f_stack(stack_t **head, unsigned int counter);
+void add_node(stack_t **top_elem, int n);
+void add_queue(stack_t **top_elem, int n);
+void func_queue(stack_t **top_elem, unsigned int iterator);
+void func_stack(stack_t **top_elem, unsigned int iterator);
 #endif
