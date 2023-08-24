@@ -2,7 +2,6 @@
 #include <stdio.h>
 
 bus_t bus = {NULL, NULL, NULL, 0};
-
 /**
 * main - this is the main  monty code interpreter
 * @argc: number of arguments passed into the interpreter

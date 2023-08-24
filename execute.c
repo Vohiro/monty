@@ -7,24 +7,21 @@
 * @passed_content: pointer to the passed content(line by line) to excuted
 * Return: empty
 */
-int execute(char *passed_content, stack_t **stack, unsigned int iterator, FILE *passed_file)
+int execute(char *passed_content, stack_t **stack,
+	unsigned int iterator, FILE *passed_file)
 {
 	instruction_t opst[] = {
-				{"push element", func_push_elem}, 
-				{"pall", func_pall}, 
-				/*{"pint", f_pint},
-				{"pop", f_pop},
-				{"swap", f_swap},
-				{"add", f_add},
-				{"nop", f_nop},
-				{"sub", f_sub},
-				{"div", f_div},
-				{"mul", f_mul},
-				{"mod", f_mod},
-				{"pchar", f_pchar},
-				{"pstr", f_pstr},
-				{"rotl", f_rotl},
-				{"rotr", f_rotr},*/
+				{"push element", func_push_elem},
+				{"pall", func_pall},
+				/*
+				 * {"pint", f_pint}, * {"pop", f_pop},
+				 * {"swap", f_swap}, * {"add", f_add},
+				 * {"nop", f_nop}, * {"sub", f_sub},
+				 * {"div", f_div}, * {"mul", f_mul},
+				 * {"mod", f_mod},* {"pchar", f_pchar},
+				 * {"pstr", f_pstr},* {"rotl", f_rotl},
+				 * {"rotr", f_rotr},
+				 */
 				{"queue", func_queue},
 				{"stack", func_stack},
 				{NULL, NULL}
@@ -45,7 +42,7 @@ int execute(char *passed_content, stack_t **stack, unsigned int iterator, FILE *
 		x++;
 	}
 	if (op_code && opst[x].opcode == NULL)
-	{ fprintf(stderr, "L%d: unknown instruction %s\n passed!!!", iterator, op_code);
+	{ fprintf(stderr, "L%d: unknown instruction %s\n!!!", iterator, op_code);
 		fclose(passed_file);
 		free(passed_content);
 		evac_stack(*stack);

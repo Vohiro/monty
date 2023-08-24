@@ -26,7 +26,7 @@ typedef struct stack_s
 /**
  * struct bus_s - variables -args, file, line content
  * @arg: value
- * @paased_file: pointer to monty file
+ * @passed_file: pointer to monty file
  * @passed_content: pointer to line content
  * @lifi: flag change stack <-> queue
  * Description: carries values through the program
@@ -58,7 +58,8 @@ char  *clean_line(char *passed_content);
 void func_push_elem(stack_t **top_elem, unsigned int iterator);
 void func_pall(stack_t **top_elem, unsigned int iterator);
 void f_pint(stack_t **head, unsigned int number);
-int execute(char *passed_content, stack_t **top_elem, unsigned int iterator, FILE *passed_file);
+int execute(char *passed_content, stack_t **top_elem,
+	unsigned int iterator, FILE *passed_file);
 void evac_stack(stack_t *top_elem);
 void f_pop(stack_t **head, unsigned int counter);
 void f_swap(stack_t **head, unsigned int counter);

@@ -1,7 +1,7 @@
 #include "monty.h"
 /**
  * func_stack - function to print the top element of the stack
- * @top_elemt: top element of the stack
+ * @top_elem: top element of the stack
  * @iterator: line iterator
  * Return: empty
 */
