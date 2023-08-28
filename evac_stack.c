@@ -1,17 +1,17 @@
 #include "monty.h"
 /**
 * evac_stack - funtion to evacuate a doubly linked list
-* @top_elem: top element of the stack
+* @top: top element of the stack
 */
-void evac_stack(stack_t *top_elem)
+void evac_stack(stack_t *top)
 {
-	stack_t *other_elem;
+	stack_t *others;
 
-	other_elem = top_elem;
-	while (top_elem)
+	others = top;
+	while (top)
 	{
-		other_elem = top_elem->next;
-		free(top_elem);
-		top_elem = other_elem;
+		others = top->next;
+		free(top);
+		top = others;
 	}
 }

@@ -1,15 +1,15 @@
 #include "monty.h"
 /**
- * add_queue - funtion to add node to the bottom of the stack
+ * addqueue - funtion to add node to the bottom of the stack
  * @n: new value
- * @top_elem: top element of the stack
+ * @top: top element of the stack
  * Return: empty
 */
-void add_queue(stack_t **top_elem, int n)
+void addqueue(stack_t **top, int n)
 {
-	stack_t *newnode, *other_elem;
+	stack_t *newnode, *others;
 
-	other_elem = *top_elem;
+	others = *top;
 	newnode = malloc(sizeof(stack_t));
 	if (newnode == NULL)
 	{
@@ -17,19 +17,19 @@ void add_queue(stack_t **top_elem, int n)
 	}
 	newnode->n = n;
 	newnode->next = NULL;
-	if (other_elem)
+	if (others)
 	{
-		while (other_elem->next)
-			other_elem = other_elem->next;
+		while (others->next)
+			others = others->next;
 	}
-	if (!other_elem)
+	if (!others)
 	{
-		*top_elem = newnode;
+		*top = newnode;
 		newnode->prev = NULL;
 	}
 	else
 	{
-		other_elem->next = newnode;
-		newnode->prev = other_elem;
+		others->next = newnode;
+		newnode->prev = others;
 	}
 }

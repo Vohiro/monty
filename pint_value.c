@@ -1,19 +1,19 @@
 #include "monty.h"
 /**
- * func_pint_value - prints the value at the top of the stack
- * @top_elem: top element of the stack
+ * f_pint - prints the value at the top of the stack
+ * @top: top element of the stack
  * @iterator: line iterator
  * Return: empty retun
 */
-void func_pint_value(stack_t **top_elem, unsigned int iterator)
+void f_pint(stack_t **top, unsigned int iterator)
 {
-	if (*top_elem == NULL)
+	if (*top == NULL)
 	{
 		fprintf(stderr, "L%u: can't pint an stack empty\n", iterator);
-		fclose(bus.passsed_file);
+		fclose(bus.passed_file);
 		free(bus.passed_content);
-		evac_stack(*top_elem);
+		evac_stack(*top);
 		exit(EXIT_FAILURE);
 	}
-	printf("%d\n", (*top_elem)->n);
+	printf("%d\n", (*top)->n);
 }

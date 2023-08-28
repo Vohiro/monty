@@ -11,19 +11,16 @@ int execute(char *passed_content, stack_t **stack,
 	unsigned int iterator, FILE *passed_file)
 {
 	instruction_t opst[] = {
-				{"push element", func_push_elem},
-				{"pall", func_pall}, {"pint", func_pint_value},
-				{"pop", func_pop_rem}, {"swap", func_swap_tops},
-				{"add", func_add_tops},{"nop", f_nop_nothing},
-				/*
-				 * {"sub", f_sub},
-				 * {"div", f_div}, * {"mul", f_mul},
-				 * {"mod", f_mod},* {"pchar", f_pchar},
-				 * {"pstr", f_pstr},* {"rotl", f_rotl},
-				 * {"rotr", f_rotr},
-				 */
-				{"queue", func_queue},
-				{"stack", func_stack},
+				{"push element", f_push},
+				{"pall", f_pall}, {"pint", f_pint},
+				{"pop", f_pop}, {"swap", f_swap},
+				{"add", f_add},{"nop", f_nop},
+				{"sub", f_sub},
+				{"div", f_div},{"mul", f_mul},
+				{"mod", f_mod},{"pchar", f_pchar},
+				{"pstr", f_pstr}, {"rotl", f_rotl},{"rotr", f_rotr},
+				{"queue", f_queue},
+				{"stack", f_stack},
 				{NULL, NULL}
 				};
 	unsigned int x = 0;

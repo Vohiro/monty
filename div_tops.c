@@ -1,11 +1,11 @@
 #include "monty.h"
 /**
- * f_add - function to add the top two elements of the stack.
+ * f_div - divides the top two elements of the stack.
  * @top: top element
  * @iterator: line numbering
  * Return: empty return
 */
-void f_add(stack_t **top, unsigned int iterator)
+void f_div(stack_t **top, unsigned int iterator)
 {
 	stack_t *first;
 	int length = 0, others;
@@ -18,14 +18,22 @@ void f_add(stack_t **top, unsigned int iterator)
 	}
 	if (length < 2)
 	{
-		fprintf(stderr, "L%d: can't add, stack too short\n", iterator);
+		fprintf(stderr, "L%d: stack too short\n", iterator);
 		fclose(bus.passed_file);
 		free(bus.passed_content);
 		evac_stack(*top);
 		exit(EXIT_FAILURE);
 	}
 	first = *top;
-	others = first->n + first->next->n;
+	if (first->n == 0)
+	{
+		fprintf(stderr, "L%d: division by zero\n", iterator);
+		fclose(bus.passed_file);
+		free(bus.passed_content);
+		evac_stack(*top);
+		exit(EXIT_FAILURE);
+	}
+	others = first->next->n / first->n;
 	first->next->n = others;
 	*top = first->next;
 	free(first);

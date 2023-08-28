@@ -55,26 +55,26 @@ typedef struct instruction_s
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t getstdin(char **lineptr, int passed_file);
 char  *clean_line(char *passed_content);
-void func_push_elem(stack_t **top_elem, unsigned int iterator);
-void func_pall(stack_t **top_elem, unsigned int iterator);
-void func_pint_value(stack_t **top_elem, unsigned int iterator);
-int execute(char *passed_content, stack_t **top_elem,
+void f_push(stack_t **top, unsigned int iterator);
+void f_pall(stack_t **top, unsigned int iterator);
+void f_pint(stack_t **top, unsigned int iterator);
+int execute(char *passed_content, stack_t **top,
 	unsigned int iterator, FILE *passed_file);
-void evac_stack(stack_t *top_elem);
-void fun_pop_elem(stack_t **top_elem, unsigned int iterator);
-void func_swap_tops(stack_t **top elem, unsigned int iterator);
-void func_add_tops(stack_t **top_elem, unsigned int iterator);
-void func_nop_nothing(stack_t **top_elem, unsigned int iterator);
-void f_sub(stack_t **head, unsigned int counter);
-void f_div(stack_t **head, unsigned int counter);
-void f_mul(stack_t **head, unsigned int counter);
-void f_mod(stack_t **head, unsigned int counter);
-void f_pchar(stack_t **head, unsigned int counter);
-void f_pstr(stack_t **head, unsigned int counter);
-void f_rotl(stack_t **head, unsigned int counter);
-void f_rotr(stack_t **head, __attribute__((unused)) unsigned int counter);
-void add_node(stack_t **top_elem, int n);
-void add_queue(stack_t **top_elem, int n);
-void func_queue(stack_t **top_elem, unsigned int iterator);
-void func_stack(stack_t **top_elem, unsigned int iterator);
+void evac_stack(stack_t *top);
+void f_pop(stack_t **top, unsigned int iterator);
+void f_swap(stack_t **top, unsigned int iterator);
+void f_add(stack_t **top, unsigned int iterator);
+void f_nop(stack_t **top, unsigned int iterator);
+void f_sub(stack_t **top, unsigned int iterator);
+void f_div(stack_t **top, unsigned int iterator);
+void f_mul(stack_t **top, unsigned int iterator);
+void f_mod(stack_t **top, unsigned int iterator);
+void f_pchar(stack_t **top, unsigned int iterator);
+void f_pstr(stack_t **top, unsigned int iterator);
+void f_rotl(stack_t **top, unsigned int iterator);
+void f_rotr(stack_t **top, __attribute__((unused)) unsigned int iterator);
+void addnode(stack_t **top, int n);
+void addqueue(stack_t **top, int n);
+void f_queue(stack_t **top, unsigned int iterator);
+void f_stack(stack_t **top, unsigned int iterator);
 #endif
